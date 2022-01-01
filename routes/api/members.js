@@ -63,8 +63,6 @@ router.post("/:id/update", async (req, res) => {
     const updateMember = {
         ...req.body,
       };
-    // await Member.findOneAndUpdate({ id: req.params.id }, { name: updateMember.name }, { new: true });
-    // await Member.findOneAndUpdate({ id: req.params.id }, { email: updateMember.email }, { new: true });
     await Member.findOneAndUpdate({ id: req.params.id }, { email: updateMember.email, name: updateMember.name }, { new: true });
     res.redirect('/');
 });
